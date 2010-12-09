@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>grabber-output</title>
+	
+</head>
+
+<body>
+
+<a href="/admin/grabber/feed/">Go back</a>
+	
+<h1>RSS Fetcher</h1>
+
+{% if smessage %}
+
+<h2>Updating {{feedname}}</h2>
+
+<p>Results:</p>
+
+<p>{% autoescape off %}
+	{% for f in feedback %}
+	{{ f }}<br />
+	{% endfor %}
+	{% endautoescape %}
+</p>
+
+
+{% else %}
+
+
+<p>The <strong>{{feedname}}</strong> feed hasn't changed since the last time you checked it.</p>
+
+{% endif %}
+
+<a href="/admin/grabber/feed/">Go back</a>
+
+</body>
+</html>
