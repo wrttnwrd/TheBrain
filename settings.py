@@ -73,7 +73,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+	'debug_toolbar.middleware.DebugToolbarMiddleware'
 )
+
+INTERNAL_IPS = ('127.0.0.1:8000')
 
 ROOT_URLCONF = 'thebrain.urls'
 
@@ -92,4 +95,5 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
 	'grabber',
-	'django_extensions')
+	'django_extensions',
+	'django.contrib.admindocs')

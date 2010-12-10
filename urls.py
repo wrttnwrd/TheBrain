@@ -5,7 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-
-    (r'^admin/grabber/fetch/(?P<feedinfo>\d+)/$', 'grabber.views.fetch'),
-    (r'^admin/', include(admin.site.urls)),
+	(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+	(r'^admin/', include(admin.site.urls)),
+    (r'^admin/grabber/fetch/(?P<feedinfo>\d+)/$', 'grabber.views.fetch')
 )
